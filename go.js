@@ -46,7 +46,7 @@ const safeGoFun = {
   NzcheckLocalSite: async (url) => {
     try {
       // 白名单地址则不修改href
-      const safeUrls = ["localhost:4000", "kuxiaohe.github.io", "kuhehe.top"];
+      const safeUrls = ["localhost:4000", "kuxiaohe.github.io", "kuhehe.top", "github.io"];
       let isOthers = false;
       for (let i = 0; i < safeUrls.length; i++) {
         const ele = safeUrls[i];
@@ -70,6 +70,6 @@ Object.keys(safeGoFun).forEach((key) => {
 // not-check-link 是小波自己设计的约定类名class，用来排除不调用跳转方法的链接
 document.addEventListener("DOMContentLoaded", function () {
   window.NzcheckLink(
-    ".post a:not(.menu):not(.menu_id):not(.post-card):not(.social-share-icon):not(.fancybox):not(.not-check-link):not(.breadcrumb)"
+    ".post a:not(.nav):not(.menu):not(.menu_id):not(.post-card):not(.social-share-icon):not(.fancybox):not(.not-check-link):not(.breadcrumb)"
   );
 });
